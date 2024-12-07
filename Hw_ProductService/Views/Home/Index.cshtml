@@ -1,0 +1,22 @@
+﻿@using Hw_ProductService.Controllers;
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<Product>;
+<table class="table">
+    @foreach(Product product in Model)
+    {
+        <tr>
+            <td>@product.Id</td>
+            <td>@product.Name</td>
+            <td>@product.Price</td>
+            <td>@product.Description</td>
+            <td>
+                <a asp-action="EditProduct" asp-route-productId="@product.Id" class="btn btn-outline-warning">Update</a>
+            </td>
+        </tr>
+        
+    }
+</table>
+
+
